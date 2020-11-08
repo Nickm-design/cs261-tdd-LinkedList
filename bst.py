@@ -12,3 +12,10 @@ class BinarySearchTree:
       self.right = None
       self.parent = None
       self.key = key
+
+   def insert(self, node):
+      if node.key <= self.key:
+         self.left = node
+         self.right = None
+         node.key = None
+         node.parent = self
