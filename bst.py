@@ -28,3 +28,8 @@ class BinarySearchTree:
    def search(self, key):
       if self.key == key:
          return self
+
+   def delete(self, key):
+      if self.key == key:
+         return self.key
+      return self
