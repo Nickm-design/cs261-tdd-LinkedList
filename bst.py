@@ -27,4 +27,4 @@ class BinarySearchTree:
 
    def search(self, key):
       if self.key == key:
-         return self.key
+         return self
