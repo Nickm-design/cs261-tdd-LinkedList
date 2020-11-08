@@ -19,3 +19,8 @@ class BinarySearchTree:
          self.right = None
          node.key = None
          node.parent = self
+      else:
+         self.left = None
+         self.right = node
+         node.key = None
+         node.parent = self
