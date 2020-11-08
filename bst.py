@@ -8,4 +8,7 @@
 class BinarySearchTree:
    
    def __init__(self):
-      pass
+      self.left = None
+      self.right = None
+      self.parent = None
+      self.key = None
