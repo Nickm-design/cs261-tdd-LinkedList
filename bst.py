@@ -24,3 +24,7 @@ class BinarySearchTree:
          self.right = node
          node.key = None
          node.parent = self
+
+   def search(self, key):
+      if self.key == key:
+         return self.key
