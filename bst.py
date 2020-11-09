@@ -26,9 +26,16 @@ class BinarySearchTree:
          return
       node.parent = self
 
-   def search(self, key):
-      if self.key == key:
+   def search(self, value):
+      if self.key == value:
          return self
+      elif value < self.key and self.left != None:
+         return self.left.search(value)
+      elif value > self.key and self.right != None:
+         return self.right.search(value)
+      else:
+         return None
+      
 
    def delete(self, key):
       if self.key == key:
