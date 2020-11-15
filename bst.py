@@ -38,35 +38,52 @@ class BinarySearchTree:
       
 
    def delete(self, key):
-      if self == None:
+      if key < self.key:
+         self.left = self.left.delete(key)
          return self
-      elif key < self.key and self.left != None:
-         return self.left.delete(key)
-      elif key > self.key and self.right != None:
-         return self.right.delete(self)
-      elif key < self.key and self.left == None:
-         if key == self.key:
-            self.key = None
-            return
-         elif self.parent == None:
-            return self
-         else:
-            return self.parent
-      elif key > self.key and self.right == None:
-         if key == self.key:
-            self.key = None
-            return
-         elif self.parent == None:
-            return self
-         else:
-            return self.parent
+      elif key > self.key:
+         self.right = self.right.delete(key)
+         return self
       elif key == self.key:
-         self.key = None
-         return 
-      else:
-         return self
+         if self.left == None and self.right == None:
+            return None
+         elif self.left != None or self.right != None:
+            if self.left != None:
+               self.parent = self.left
+               return self
+            elif self.right != None:
+               self.parent = self.right
+               return self
+         elif self.left != None and self.right != None:
+            temp = self
+            if temp.right != None:
+   
+   
 
-      # if self.key == key:
+      # if self == None:
+      #    return self 
+      # elif key < self.key and self.left != None:
+      #    return self.left.delete(key)
+      # elif key > self.key and self.right != None:
+      #    return self.right.delete(self)
+      # elif key < self.key and self.left == None:
+      #    if key == self.key:
+      #       self.key = None
+      #       return self
+      #    elif self.parent == None:
+      #       return self
+      #    else:
+      #       return self.parent
+      # elif key > self.key and self.right == None:
+      #    if key == self.key:
+      #       self.key = None
+      #       return self
+      #    elif self.parent == None:
+      #       return self
+      #    else:
+      #       return self.parent
+      # elif key == self.key:
       #    self.key = None
-      #    return self.key
-      # return self
+      #    return
+      # else:
+      #    return self
