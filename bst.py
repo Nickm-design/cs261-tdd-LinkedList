@@ -63,5 +63,8 @@ class BinarySearchTree:
    
    def has_left_child(self):
       return self.left
+   
+   def has_right_child(self):
+      return self.right
             
 
