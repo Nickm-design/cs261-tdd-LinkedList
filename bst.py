@@ -60,5 +60,8 @@ class BinarySearchTree:
    
    def is_leaf(self):
       return self.left == None and self.right == None
+   
+   def has_left_child(self):
+      return self.left
             
 
