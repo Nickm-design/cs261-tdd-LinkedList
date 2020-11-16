@@ -627,12 +627,12 @@ class TestBinarySearchTree(unittest.TestCase):
         bst.left = BinarySearchTree(15)
         self.assertTrue(bst.has_left_child())
 
-    # def test_not_has_right_child(self):
-    #     """
-    #     A node without a right child returns False.
-    #     """
-    #     bst = BinarySearchTree(10)
-    #     self.assertFalse(bst.has_right_child())
+    def test_not_has_right_child(self):
+        """
+        A node without a right child returns False.
+        """
+        bst = BinarySearchTree(10)
+        self.assertFalse(bst.has_right_child())
 
     # def test_find_minimum_one(self):
     #     """
