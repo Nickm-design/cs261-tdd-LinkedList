@@ -47,9 +47,8 @@ class BinarySearchTree:
          self.right = self.right.delete(key)
          return self
       elif key == self.key:
-         if self.left == None and self.right == None:
-            return None
-         elif self.left != None or self.right != None:
+         self.is_leaf()
+         if self.left != None or self.right != None:
             if self.left != None:
                return self.left
             elif self.right != None:
@@ -60,34 +59,7 @@ class BinarySearchTree:
                return
       else:
          return self
-      
    
-   
-
-      # if self == None:
-      #    return self 
-      # elif key < self.key and self.left != None:
-      #    return self.left.delete(key)
-      # elif key > self.key and self.right != None:
-      #    return self.right.delete(self)
-      # elif key < self.key and self.left == None:
-      #    if key == self.key:
-      #       self.key = None
-      #       return self
-      #    elif self.parent == None:
-      #       return self
-      #    else:
-      #       return self.parent
-      # elif key > self.key and self.right == None:
-      #    if key == self.key:
-      #       self.key = None
-      #       return self
-      #    elif self.parent == None:
-      #       return self
-      #    else:
-      #       return self.parent
-      # elif key == self.key:
-      #    self.key = None
-      #    return
-      # else:
-      #    return self
+   def is_leaf(self):
+      return self.left == None and self.right == None
+            
